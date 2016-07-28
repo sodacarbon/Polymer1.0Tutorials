@@ -280,3 +280,8 @@ textarea {
         page-break-after: avoid;
     }
 }
+
+google-map {
+    height: 400px;
+    width: 100%;
+}
