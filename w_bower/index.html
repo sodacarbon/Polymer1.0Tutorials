@@ -19,15 +19,19 @@
         <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
         <!-- endbuild -->
 
-        <!-- Note: just 1 import file -->
+        <!-- Note: just 2 import files -->
         <!-- WebStorm: Copy Reference ^!+C -->
         <link rel="import" href="bower_components/google-map/google-map.html">
+        <!--Our custom component-->
+        <link rel="import" href="hello-world.html">
 
     </head>
     <body>
+        <hello-world></hello-world>
+        <h1>Hello World</h1>
         <!--Bangkok/Coordinates 13.7563° N, 100.5018° E-->
-        <google-map latitude="13.7563" longitude="100.5018">
-            <google-map-marker latitude="13.7563" longitude="100.5018" title="Welcome to Bangkok!"></google-map-marker>
-        </google-map>
+        <!--<google-map latitude="13.7563" longitude="100.5018">-->
+            <!--<google-map-marker latitude="13.7563" longitude="100.5018" title="Welcome to Bangkok!"></google-map-marker>-->
+        <!--</google-map>-->
     </body>
 </html>
