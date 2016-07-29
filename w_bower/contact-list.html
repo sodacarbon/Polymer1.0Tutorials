@@ -1,6 +1,7 @@
 <!-- Same Structure with bower_components/google-map/google-map.html -->
 
 <link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="contact-listing.html">
 
 <!--CSS, HTML, JAVASCRIPT , all in one html component file-->
 <dom-module id="contact-list">
@@ -8,32 +9,19 @@
         ul {
             list-style: none;
         }
-        li {
-            display: flex;
-            margin-bottom: 20px;
-        }
-        li img {
-            border-radius: 50%;
-            margin-right: 10px;
-        }
         li + li {
             border-top: solid 1px #666;
-        }
-        h3 {
-            margin: 0 40px 0 0;
-            line-height: 80px;
-        }
-        li span {
-            line-height: 80px;
         }
     </style>
     <template>
         <ul>
             <template is="dom-repeat" items="{{contacts}}">
                 <li>
-                    <img src="{{item.img}}" alt="">
-                    <h3>{{item.name}}</h3>
-                    <span>{{item.email}}</span>
+                    <contact-listing
+                        name="{{item.name}}"
+                        email="{{item.email}}"
+                        img="{{item.img}}">
+                    </contact-listing>
                 </li>
             </template>
         </ul>
