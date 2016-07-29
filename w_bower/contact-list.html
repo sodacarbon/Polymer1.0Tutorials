@@ -29,21 +29,13 @@
     </style>
     <template>
         <ul>
-            <li>
-                <img src="https://randomuser.me/api/portraits/thumb/men/10.jpg" alt="">
-                <h3>Scott</h3>
-                <span>scott@leveluptuts.com</span>
-            </li>
-            <li>
-                <img src="https://randomuser.me/api/portraits/thumb/men/5.jpg" alt="">
-                <h3>Tim</h3>
-                <span>tim@leveluptuts.com</span>
-            </li>
-            <li>
-                <img src="https://randomuser.me/api/portraits/thumb/men/3.jpg" alt="">
-                <h3>Ben</h3>
-                <span>ben@leveluptuts.com</span>
-            </li>
+            <template is="dom-repeat" items="{{contacts}}">
+                <li>
+                    <img src="{{item.img}}" alt="">
+                    <h3>{{item.name}}</h3>
+                    <span>{{item.email}}</span>
+                </li>
+            </template>
         </ul>
     </template>
 </dom-module>
@@ -51,19 +43,29 @@
 <script>
     Polymer({
         is: 'contact-list',
-        properties: {
-            firstName: String,
-            lastName: {
-                type: String,
-                value: "Gaga"   // default value
-            },
-            fullName: {
-                type: String,
-                computed: 'computeFullName(firstName, lastName)'
-            }
-        },
-        computeFullName: function (firstName, lastName) {
-            return firstName + ' ' + lastName;
+        ready: function () {
+            this.contacts = [
+                {
+                    name: "Scott",
+                    email: "scott@leveluptuts.com",
+                    img: "https://randomuser.me/api/portraits/thumb/men/10.jpg"
+                },
+                {
+                    name: "Tim",
+                    email: "tim@leveluptuts.com",
+                    img: "https://randomuser.me/api/portraits/thumb/men/5.jpg"
+                },
+                {
+                    name: "Ben",
+                    email: "ben@leveluptuts.com",
+                    img: "https://randomuser.me/api/portraits/thumb/men/3.jpg"
+                },
+                {
+                    name: "Bobby",
+                    email: "bobby@leveluptuts.com",
+                    img: "https://randomuser.me/api/portraits/thumb/men/4.jpg"
+                }
+            ]
         }
     });
 </script>
