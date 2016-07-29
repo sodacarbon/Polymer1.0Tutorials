@@ -11,6 +11,7 @@
     </style>
     <template>
         <h1>{{firstName}} {{lastName}}</h1>
+        <h1>{{fullName}}</h1>
     </template>
 </dom-module>
 
@@ -19,7 +20,17 @@
         is: 'hello-world',
         properties: {
             firstName: String,
-            lastName: String
+            lastName: {
+                type: String,
+                value: "Gaga"   // default value
+            },
+            fullName: {
+                type: String,
+                computed: 'computeFullName(firstName, lastName)'
+            }
+        },
+        computeFullName: function (firstName, lastName) {
+            return firstName + ' ' + lastName;
         }
     });
 </script>
